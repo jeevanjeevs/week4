@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "sim": "SIM Card Number 12345",
+      "mobile": "123-456-7890",
+      "imei": "IMEI Number 67890",
+      "serviceProvider": "Provider X",
+      "networkStatus": "Connected",
+      "batteryStatus": "75%",
+      "address": "123 Main Street, City",
+      "healthConditions": "None"
+    },
+    {
+      "sim": "SIM Card Number 54321",
+      "mobile": "987-654-3210",
+      "imei": "IMEI Number 09876",
+      "serviceProvider": "Provider Y",
+      "networkStatus": "No Signal",
+      "batteryStatus": "50%",
+      "address": "456 Elm Street, Town",
+      "healthConditions": "Allergies"
+    }
+  ],
+  "places": [
+    {
+      "typesOfPlaces": {
+        "historical": {
+          "lat": 40.7128,
+          "lon": -74.0060,
+          "timings": "9:00 AM - 5:00 PM",
+          "dressCode": "Casual",
+          "entranceFees": "$10",
+          "specialInstructions": "No photography allowed inside."
+        },
+        "adventurous": {
+          "lat": 36.7783,
+          "lon": -119.4179,          
+          "timings": "Open 24/7",
+          "dressCode": "Comfortable clothing",
+          "entranceFees": "Free",
+          "specialInstructions": "Safety gear required."
+        },
+        "park": {
+          "timings": "Dawn to Dusk",
+          "dressCode": "Casual",
+          "entranceFees": "Varies",
+          "specialInstructions": "No littering."
+        },
+        "religious": {
+          "timings": "Check with the temple/mosque/church",
+          "dressCode": "Modest attire",
+          "entranceFees": "Donation based",
+          "specialInstructions": "Respect religious customs."
+        },
+        "shopping": {
+          "timings": "Mall hours",
+          "dressCode": "Casual",
+          "entranceFees": "Free",
+          "specialInstructions": "Bargain wisely."
+        },
+        "beach": {
+          "timings": "Sunrise to Sunset",
+          "dressCode": "Swimsuit or beachwear",
+          "entranceFees": "Parking fee may apply",
+          "specialInstructions": "Keep the beach clean."
+        },
+        "food places": {
+          "timings": "Varies",
+          "dressCode": "Casual",
+          "entranceFees": "Menu prices",
+          "specialInstructions": "Try the local cuisine."
+      }
+      
+    }
+  }
+    
+  ]
+}
+  
+

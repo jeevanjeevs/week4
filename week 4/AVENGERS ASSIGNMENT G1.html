@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .container{
+            background-color: darkturquoise;
+            border-radius: 20px;
+            border: 2px solid grey;
+            width: 900px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: center;
+            padding: 10px;
+            background: url(images/space.webp);
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center center;
+            box-shadow: 5px 5px 5px grey;
+            
+            
+        }
+        .card{
+        
+            border-radius: 20px;
+            background-color: dimgrey;
+            color: white;
+            font-weight: 500;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+            
+
+        button{
+            padding: 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            
+            background-color: crimson;
+        }
+        button:hover{
+            background-color: chocolate;
+        }
+
+        @keyframes jeevss {
+            from{
+                border-radius: 70%;
+                width: 300px;
+                height: 300px;
+                transform: rotate(180deg);
+
+            }
+            to{
+                border-radius: 0%;
+                transform: rotate(360deg);
+                
+                
+
+            }
+            
+        }
+        img{
+            animation-name: jeevss;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            
+        }
+        li{
+            list-style: none;
+        }
+        select{
+            width: 200px;
+            padding: 10px;
+            font-weight: 700;
+            border-radius: 20px;
+            
+        }
+        select:hover{
+           background-color: aquamarine;
+           
+            
+        }
+
+    </style>
+
+    <script src="lib/jquery.3.7.1.js"></script>
+    <script>
+        var tempdata = {}
+
+        $(() => {
+            $.getJSON("data/data.json", function (data, status, jqxhr) {
+                tempdata = data;
+
+                $(data.herolist).each(function (idx, val) {
+                    $(".hlist").append(`<option value="${idx}">${val.title}</option>`)
+                });
+            });
+
+            $(".box").on("click", "button", function (evt) {
+                $(evt.target).next().removeAttr("hidden");
+                
+            });
+
+            $(".box").on("click", ".btn-success", function () {
+            $(this).next("img").toggle("jeevu");
+            });
+            
+
+            $(".hlist").on("change", function (evt) {
+                let selectedhero = tempdata.herolist[evt.target.value];
+                let selectedmovielist = selectedhero.movieslist;
+            
+                $(".box").html(`
+                    <div class="card" style="width: 25rem;">
+                        <img src="${selectedhero.poster.replace('assets/images', 'images/')}" class="card-img-top" alt="${selectedhero.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${selectedhero.title}</h5>
+                            <p class="card-text">
+                                Full Name : ${selectedhero.firstname + " " + selectedhero.lastname}
+                                <br/>
+                                Release on : ${selectedhero.releasedate}
+                                <br/>
+                                Ticket Price : ${selectedhero.ticketprice}
+                                <br/>
+                                City : ${selectedhero.city}
+                            </p>
+                            <button>Movies</button>
+                            <div hidden class="card" style="width: 100%">
+                                <ul class="list-group list-group-flush">
+                                    ${selectedmovielist.map(movie => `<button class="btn-success">${movie.title}</button>
+                                    <img src="${movie.poster.replace('assets/images', 'images/')}" alt="">`).join("")}
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `)
+            })
+        });
+        
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <select class="hlist">
+            <option>Select Your Hero</option>
+        </select>
+        <div class="box"></div>
+    </div>
+
+
+   
+    
+    
+</body>
+</html>

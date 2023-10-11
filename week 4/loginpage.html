@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Data Form</title>
+    <style>
+        #userDataForm{
+            border: 2px solid slategrey;
+            height: 800px;
+            width: 700px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin: 100px auto;
+            align-items: center;
+            align-content: center;
+            background-image: url(images/pexels-photo-7235804.jpeg);
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center center;
+            text-shadow: 3px 3px 7px wheat;
+            box-shadow: 5px 5px 7px black ;
+            font-size: x-large;
+            gap: 0px;
+        
+
+        }
+        #submitbutton{
+            padding: 15px;
+            width: 100px;
+            background-color: crimson;
+            border-radius: 15px;
+
+        }
+        #submitbutton:hover{
+            background-color: goldenrod;
+            
+        }
+        
+        h1:hover{
+            color: crimson;
+        }
+        h1{
+            
+            font-size: 220%;
+        }
+
+        @keyframes jeevs {
+            from{
+                font-size: small;
+                height: 650px;
+                background-position: left top;    
+                
+                
+                
+            }
+            to{
+                font-size: x-large;
+                height: 800px;
+                background-position: center center;
+                
+                
+                
+            }
+            
+        }
+
+        @keyframes headingAnimation {
+            from{
+                font-size: small;
+                   
+                
+            }
+            to{
+                font-size: 220%;
+                
+                
+            }
+        }
+        
+        form{
+            animation-name: jeevs;
+            animation-duration: 2s;
+        }
+        input{
+            padding: 5px;
+        }
+
+        h1{
+            animation-name: headingAnimation;
+            animation-duration: 3s;
+        }
+        
+
+        
+
+
+
+
+        
+        
+    </style>
+</head>
+<body>
+    
+    <form id="userDataForm">
+        <h1> USER LOGIN PAGE</h1>
+        
+        <label for="fname">First name</label>
+        <input type="text" id="fname" name="fname" required placeholder="Enter your First Name"><br>
+
+        <label for="lname">Last name</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter your Last Name"><br>
+
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile" name="mobile" required placeholder="Enter your Mobile Number"><br>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="abc@gmail.com"><br>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required placeholder="Enter your Address"><br>
+
+        
+        <input id="submitbutton" type="submit">
+    </form>
+
+    <div id="result"></div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
